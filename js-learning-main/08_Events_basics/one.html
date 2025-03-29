@@ -72,7 +72,7 @@
       "click",
       function (e) {
         console.log("Clicked on the owl");
-        e.stopPropagation();
+        //e.stopPropagation();
       },
       false
     );
@@ -82,6 +82,18 @@
         console.log("Google clicked");
         e.preventDefault();
         e.stopPropagation();
+      },
+      false
+    );
+    document.getElementById("images").addEventListener(
+      "click",
+      (e) => {
+        if (e.target.tagName === "IMG") {
+          console.log(e.target.id);
+
+          let removeit = e.target.parentNode;
+          removeit.remove();
+        }
       },
       false
     );
