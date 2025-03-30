@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: black">
+    <h1 class="h1" style="color: aliceblue">Chai aur Javascript</h1>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+  </body>
+  <script>
+    let i = 0;
+    const count_name = function () {
+      console.log("Pratyush", i);
+      i++;
+    };
+    let intervalId;
+    document.getElementById("start").addEventListener("click", (e) => {
+      intervalId = setInterval(count_name, 1000);
+    });
+    document.getElementById("stop").addEventListener("click", (e) => {
+      clearInterval(intervalId);
+      console.log("Stopped");
+    });
+  </script>
+</html>
