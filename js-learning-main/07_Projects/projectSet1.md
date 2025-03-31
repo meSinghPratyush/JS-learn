@@ -177,13 +177,16 @@ const randomColor = function () {
 };
 let change;
 const startChangecolor = function () {
-  change = setInterval(changeBGcolor, 1000);
+  if (!change) {
+    change = setInterval(changeBGcolor, 1000);
+  }
   function changeBGcolor() {
     document.body.style.backgroundColor = randomColor();
   }
 };
 const stopChangecolor = function () {
   clearInterval(change);
+  change = null;
 };
 
 document.getElementById("start").addEventListener("click", startChangecolor);
